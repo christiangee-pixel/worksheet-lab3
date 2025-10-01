@@ -1,4 +1,4 @@
-## HELLO!
+## HELLO! Clone Instructions
 
 This is the README file for the worksheet part of lab. To clone it to your local machine, use the following command:
 

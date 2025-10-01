@@ -1,0 +1,98 @@
+---
+format: typst
+---
+
+# Lab Worksheet - Exploratory Data Analysis in airquality Dataset
+
+```{r}
+#| warning: false
+#| message: false
+
+# load libraries:
+library(tidyverse) # Recall that tidyverse contains dplyr, ggplot2, and many other useful packages.
+
+# Load `airquality` dataset:
+data("airquality")
+airquality |> 
+    head()
+```
+
+Q1: Render this quarto file to a pdf.
+
+\
+
+Q2: Create a summary table of the number and proportion of NA values in each column.
+
+```{r}
+# your code here
+
+```
+
+\
+
+Q3: Convert the `Month` column to a factor with it's levels labeled as month names (e.g. "May", "June", etc.).
+
+```{r}
+# your code here
+
+```
+
+\
+
+Q4: Create a new column `Temp_C` that converts the temperature from Fahrenheit to Celsius.
+
+```{r}
+# your code here
+
+```
+
+\
+
+Q5: Rename the `Wind` column to `Wind_mph` and the Temp column to `Temp_F`.
+
+```{r}
+# your code here
+
+```
+
+\
+
+Q6: Create a scatter plot of `Ozone` vs `Temp_C`, colored by `Month`. Add appropriate axis labels and a title.
+
+```{r}
+# your code here
+
+```
+
+\
+
+Q7: Create a violin plot of `Ozone` levels for each month. Add appropriate axis labels and a title.
+
+```{r}
+# your code here
+
+```
+
+\
+
+Q8: Create a segmented bar chart of the proportion of days with `Ozone` levels above 50 by `Month`. Remove NA values in the `Ozone` column. Add appropriate axis labels and a title.
+
+```{r}
+# your code here
+
+```
+
+\
+
+Q9: Create a stacked bar chart showing the count of days available for each month. Fill bar colors by `Ozone` levels above or below 50 for each month. Remove NA values in the `Ozone` column. Add appropriate axis labels and a title.
+
+```{r}
+# your code here
+
+```
+
+\
+
+Q10: What is the utility of using a segmented bar chart vs a regular bar chart in this context? Which do you think is more informative and why?
+
+...

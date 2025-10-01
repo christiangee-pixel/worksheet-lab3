@@ -9,9 +9,9 @@ To clone it to your local machine using Positron, follow these steps:
 
 Once you have Positron installed on your machine, open it up.
 
-### Step 2: Navigate to the top of your screen:
+### Step 2: Start the cloning process
 
-- Select File > New Folder from Git
+- Navigate to the top of your screen and select **`File > New Folder`** from Git
 
 - If the `New Folder from Git` option is not available, you will need to navigate to the **`Source Control`** panel on the right side of the positron interface (it looks like a branching tree icon). Click on it, and then click trust project / authorize.
 
@@ -27,8 +27,11 @@ Once you have Positron installed on your machine, open it up.
 
 - Then select your desired location to save (preferably your `stat133` folder).
 
-### Step 4: Open the worksheet.qmd file and start working!
+### Step 4: Start working!
 
+- Open worksheet.qmd by double-clicking on it in the file explorer panel on the left side of the Positron interface.
+
+- You can now start working on the worksheet! Congrats!
 
 ### Alternative (Not Recommended): Cloning via Terminal
 

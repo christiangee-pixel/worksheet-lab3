@@ -1,4 +1,4 @@
-## HELLO! Clone Instructions
+## HELLO! Clone Instructions + Cheatsheets for ggplot2, dplyr, and tidyr
 
 This is the README file for the worksheet part of lab. 
 
@@ -32,6 +32,20 @@ Once you have Positron installed on your machine, open it up.
 - Open worksheet.qmd by double-clicking on it in the file explorer panel on the left side of the Positron interface.
 
 - You can now start working on the worksheet! Congrats!
+
+### Cheatsheets 🙏🙏
+
+- ggplot2 (data visualization):
+    - pdf: [https://rstudio.github.io/cheatsheets/data-visualization.pdf](https://rstudio.github.io/cheatsheets/data-visualization.pdf)
+    - html: [https://rstudio.github.io/cheatsheets/html/data-visualization.html](https://rstudio.github.io/cheatsheets/html/data-visualization.html)
+
+- dplyr (data wrangling):
+    - pdf: [https://rstudio.github.io/cheatsheets/data-transformation.pdf](https://rstudio.github.io/cheatsheets/data-transformation.pdf)
+    - html: [https://rstudio.github.io/cheatsheets/html/data-transformation.html](https://rstudio.github.io/cheatsheets/html/data-transformation.html)
+
+- tidyr (will be useful for project): 
+    - pdf: [https://rstudio.github.io/cheatsheets/tidyr.pdf](https://rstudio.github.io/cheatsheets/tidyr.pdf)
+    - html: [https://rstudio.github.io/cheatsheets/html/tidyr.html](https://rstudio.github.io/cheatsheets/html/tidyr.html)
 
 ### Alternative (Not Recommended): Cloning via Terminal
 

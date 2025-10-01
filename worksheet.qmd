@@ -17,7 +17,7 @@ airquality |>
     head()
 ```
 
-Q1: Render this quarto file to a pdf.
+Q1: Render this quarto file to a pdf. To do so, you can use the hotkey `Ctrl + Shift + K` or `Cmd + Shift + K`. Then, you will see a command appear in the Positron Terminal. Once the command finishes running, you will see a pdf file appear in the same directory as this file and a **VIEWER** window will display the pdf on the right pane of Positron. Here you should see the rendered contents of this file.
 
 \
 
@@ -95,4 +95,4 @@ Q9: Create a stacked bar chart showing the count of days available for each mont
 
 Q10: What is the utility of using a segmented bar chart vs a regular bar chart in this context? Which do you think is more informative and why?
 
-...
+\# your answer here

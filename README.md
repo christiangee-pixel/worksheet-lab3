@@ -43,7 +43,7 @@ Once you have Positron installed on your machine, open it up.
     - pdf: [https://rstudio.github.io/cheatsheets/data-transformation.pdf](https://rstudio.github.io/cheatsheets/data-transformation.pdf)
     - html: [https://rstudio.github.io/cheatsheets/html/data-transformation.html](https://rstudio.github.io/cheatsheets/html/data-transformation.html)
 
-- tidyr (will be useful for project): 
+- tidyr (table reshaping, will be useful for project): 
     - pdf: [https://rstudio.github.io/cheatsheets/tidyr.pdf](https://rstudio.github.io/cheatsheets/tidyr.pdf)
     - html: [https://rstudio.github.io/cheatsheets/html/tidyr.html](https://rstudio.github.io/cheatsheets/html/tidyr.html)
 

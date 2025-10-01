@@ -35,6 +35,8 @@ Once you have Positron installed on your machine, open it up.
 
 ### Cheatsheets 🙏🙏
 
+Here are some useful cheatsheets for ggplot2, dplyr, and tidyr. That will help you with the worksheet and project.
+
 - ggplot2 (data visualization):
     - pdf: [https://rstudio.github.io/cheatsheets/data-visualization.pdf](https://rstudio.github.io/cheatsheets/data-visualization.pdf)
     - html: [https://rstudio.github.io/cheatsheets/html/data-visualization.html](https://rstudio.github.io/cheatsheets/html/data-visualization.html)

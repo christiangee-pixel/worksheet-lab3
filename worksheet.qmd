@@ -24,7 +24,12 @@ Q1: Render this quarto file to a pdf. To do so, you can use the hotkey `Ctrl + S
 Q2: Convert the `Month` column to a factor with it's levels labeled as month names (e.g. "May", "June", etc.).
 
 ```{r}
-# your code here
+
+airquality <- airquality |>
+    mutate(Month = factor(Month, levels = 5:9, labels = c("May", "June", "July" "August", "September")))
+
+airquality |> 
+    head()
 
 ```
 
@@ -33,7 +38,12 @@ Q2: Convert the `Month` column to a factor with it's levels labeled as month nam
 Q3: Create a new column `Temp_C` that converts the temperature from Fahrenheit to Celsius.
 
 ```{r}
-# your code here
+
+airquality <- airquality |> 
+    mutate(Temp_C = (Temp - 32) * 5/9)
+
+airquality |> 
+    head()
 
 ```
 
@@ -42,8 +52,12 @@ Q3: Create a new column `Temp_C` that converts the temperature from Fahrenheit t
 Q4: Rename the `Wind` column to `Wind_mph` and the Temp column to `Temp_F`.
 
 ```{r}
-# your code here
 
+airquality <- airquality |>
+    rename(Wind-mph = Wind, Temp_F = Temp)
+
+airquality |> 
+    head()
 ```
 
 \
@@ -51,7 +65,14 @@ Q4: Rename the `Wind` column to `Wind_mph` and the Temp column to `Temp_F`.
 Q5: Create a scatter plot of `Ozone` vs `Temp_C`, colored by `Month`. Add appropriate axis labels and a title.
 
 ```{r}
-# your code here
+airquality |>
+ggplot(mapping = aes(x = Temp_C, y = Ozone, color = Month)) +
+    geom_point(size = , alpha = ) +
+    labs(title = "Ozone Levels (ppb) Vs. Temperature (°C) by Month",
+        x = "Temperature (°C)",
+        y = "Ozone (ppb)",
+        color = "Month") +
+     theme_minimal()
 
 ```
 
@@ -60,8 +81,12 @@ Q5: Create a scatter plot of `Ozone` vs `Temp_C`, colored by `Month`. Add approp
 Q6: Create a violin plot of `Ozone` levels for each month. Add appropriate axis labels and a title.
 
 ```{r}
-# your code here
 
+airquality |>
+ggplot(mapping = aes(x = Month, y = Ozone, fill = Month)) +
+    geom_violin() +
+    labs(title = "Distribution of Ozone Levels by Month") +
+    theme_minimal() 
 ```
 
 \
@@ -69,7 +94,18 @@ Q6: Create a violin plot of `Ozone` levels for each month. Add appropriate axis 
 Q7: Create a segmented bar chart of the proportion of days with `Ozone` levels above 50 by `Month`. Remove NA values in the `Ozone` column. Add appropriate axis labels and a title.
 
 ```{r}
-# your code here
+
+airquality |>
+    drop_na(Ozone) |>
+    mutate(Ozone_High = ifelse(Ozone > 50, "Above 50", "50 or Below")) |>
+    group_by(Month, Ozone_High) |>
+    sumarise(Count = n(), .groups = "drop") |>
+    group_by(Month) |>
+    Mutate(Proportion = Count / sum(Count)) |>
+    ggplot(aes(x = Month, y = Proportion, fill = Ozone_High)) +
+    geom_bar(stat = "identity", position = "fill") +
+    labs(title = "Proportion of Days with Ozone Levels Above 50 by Month,"
+        x = "Month")
 
 ```
 
@@ -78,7 +114,16 @@ Q7: Create a segmented bar chart of the proportion of days with `Ozone` levels a
 Q8: Create a stacked bar chart showing the count of days available for each month. Fill bar colors by `Ozone` levels above or below 50 for each month. Remove NA values in the `Ozone` column. Add appropriate axis labels and a title.
 
 ```{r}
-# your code here
+
+airquality |>
+    drop_na(Ozone) |>
+    mutate(Ozone_High = ifelse(Ozone > 50, "Above 50", "50 or Below")) |>
+    ggplot(aes(x = Month, fill = Ozone_High)) +
+    geom_bar()
+    labs(title = "Count of Days with Ozone Levels above 50",
+        x = "Month"
+        y = "Count of Days") +
+    theme_minimal()
 
 ```
 
@@ -86,11 +131,32 @@ Q8: Create a stacked bar chart showing the count of days available for each mont
 
 Q9: What is the utility of using a segmented bar chart vs a regular bar chart in this context? Which do you think is more informative and why?
 
-\# your answer here
+A segmented bar chart shows proportions within each month (how much of May’s days are above 50 vs below), which makes comparisons across months easier.
+A regular stacked bar chart shows absolute counts, which is more useful if we care about how many days of data are available.
 
 Q10: Create a summary table of the number and proportion of NA values in each column.
 
 ```{r}
-# your code here
+airquality |>
+    summarise(
+        missing_Ozone = sum(is.na(Ozone)),
+        proportion_missing_Ozone = mean(is.na(Ozone)),
+        missing_SolarR = sum(is.na(Solar.R)),
+        prop_missing_SolarR = mean(is.na(Solar.R)),
+        missing_Wind = sum(is.na(Wind_mph)),
+        prop_missing_Wind = mean(is.na(Wind_mph)),
+        missing_Temp = sum(is.na(Temp_F)),
+        prop_missing_Temp = mean(is.na(Temp_F)),
+        missing_Month = sum(is.na(Month)),
+        prop_missing_Month = mean(is.na(Month)),
+        missing_Day = sum(is.na(Day)),
+        prop_missing_Day = mean(is.na(Day))
+    ) |>
+        pivot_longer(everything(), names_to = "Metric", values_to = "Value")
+
+    airquality |>
+        summarize(across(everything(), ~sum(is.na(.)))) |>
+        pivot_longer(everything(), names_to = "Column", values_to = "Num_NA")
+
 
 ```
